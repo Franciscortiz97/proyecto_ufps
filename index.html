@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bitácora de Obra</title>
+    <img src="imagenes.html/logoufps.png" alt="logoufps" height="100px">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Sixtyfour+Convergence&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+        }
+        .entry {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 style="color: rgb(126, 3, 3);">Bitácora de Obra</h1>
+
+        <!-- Formulario para subir fotos y añadir comentarios -->
+        <div class="entry">
+            <label for="photo">Subir Foto:</label>
+            <input type="file" id="photo" accept="image/*"><br><br>
+
+            <label for="comment">Comentario:</label><br>
+            <textarea id="comment" rows="4" cols="50" placeholder="Añade un comentario..."></textarea><br><br>
+
+            <button onclick="addEntry()">Agregar a la Bitácora</button>
+        </div>
+
+        <hr>
+
+        <!-- Sección para mostrar las fotos y comentarios ingresados -->
+        <h2 style="color: rgb(126, 3, 3) ;">Entradas en la Bitácora:</h2>
+        <div id="entries"></div>
+
+        <!-- Botón para generar PDF -->
+        <button onclick="generatePDF()">Generar PDF</button>
+    </div>
+
+    <!-- Cargar la librería jsPDF desde un CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <!-- Archivo de JavaScript personalizado -->
+    <script src="app.js"></script>
+</body>
+</html>
